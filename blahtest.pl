@@ -2,12 +2,12 @@
 use strict;
 use warnings;
 use lib "lib";
-use JSON::Acrobatic::Writer;
+use JSON::Acrobatic;
 use Compress::Zlib;
 use JSON::Any;
 use Time::HiRes;
 
-my $jw = JSON::Acrobatic::Writer->new();
+my $jw = JSON::Acrobatic->new();
 my $ja = JSON::Any->new();
 
 my $user = {

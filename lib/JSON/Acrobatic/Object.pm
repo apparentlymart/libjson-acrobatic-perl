@@ -33,6 +33,13 @@ sub FETCH {
     }
 }
 
+sub STORE {
+    my ($self, $key, $value) = @_;
+
+    my $id = $self->[JSON::Acrobatic::Wrapper::ROOT()]->_acrobatic_value($value);
+    $self->[JSON::Acrobatic::Wrapper::REF()]->{$key} = $id;
+}
+
 sub FIRSTKEY {
     my ($self) = @_;
     keys %{$self->[JSON::Acrobatic::Wrapper::REF()]}; # reset each() pointer
